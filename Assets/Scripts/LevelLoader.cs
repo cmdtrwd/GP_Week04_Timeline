@@ -6,6 +6,12 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +25,6 @@ public class LevelLoader : MonoBehaviour
     {
         transition.SetTrigger("ChangeScene");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
