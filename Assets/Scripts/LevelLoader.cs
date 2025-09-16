@@ -20,11 +20,12 @@ public class LevelLoader : MonoBehaviour
             StartCoroutine(LoadNextLevel());
         }
     }
-    
+
     IEnumerator LoadNextLevel()
     {
         transition.SetTrigger("ChangeScene");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        transition.SetTrigger("LoadNewScene");
     }
 }
