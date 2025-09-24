@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Light sceneLight;
     public void SaveSettings()
     {
         Debug.Log("Settings have been saved.");
-
-        PlayerPrefs.SetInt("IsLightOn", 1);
+        int isOn = sceneLight.enabled ? 1 : 0;
+        PlayerPrefs.SetInt("IsLightOn", isOn);
     }
 
     public void LoadSettings()
@@ -15,10 +16,12 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("IsLightOn") == 1)
         {
             Debug.Log("Light is ON");
+            sceneLight.enabled = true;
         }
         else
         {
             Debug.Log("Light is OFF");
+            sceneLight.enabled = false;
         }
     }
 }
