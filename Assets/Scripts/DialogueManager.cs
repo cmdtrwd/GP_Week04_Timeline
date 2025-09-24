@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public TMPro.TextMeshProUGUI mainText;
 
     public RawImage npcImage;
-    // public Animator anim;
+    public Animator anim;
     private Queue<string> sentences;
 
 
@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     {
         //Debug.Log("Starting conversation with " + _dialogue.name);
 
-        // anim.SetBool("IsOpen", true);
+        anim.SetBool("IsOpen", true);
 
         nameText.text = _dialogue.name;
         npcImage.texture = _dialogue.npcImage;
@@ -42,7 +42,6 @@ public class DialogueManager : MonoBehaviour
         if(sentences.Count == 0)
         {
             EndDialogue();
-            // anim.SetBool("IsOpen", false);
             return;
         }
 
@@ -55,5 +54,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
+        anim.SetBool("IsOpen", false);
     }
 }
