@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text mainText;
+    public TMPro.TextMeshProUGUI nameText;
+    public TMPro.TextMeshProUGUI mainText;
     // public Animator anim;
     private Queue<string> sentences;
 
