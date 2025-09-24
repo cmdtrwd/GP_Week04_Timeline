@@ -6,6 +6,8 @@ public class DialogueManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI nameText;
     public TMPro.TextMeshProUGUI mainText;
+
+    public RawImage npcImage;
     // public Animator anim;
     private Queue<string> sentences;
 
@@ -23,6 +25,7 @@ public class DialogueManager : MonoBehaviour
         // anim.SetBool("IsOpen", true);
 
         nameText.text = _dialogue.name;
+        npcImage.texture = _dialogue.npcImage;
 
         sentences.Clear();
 
