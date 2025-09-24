@@ -31,6 +31,6 @@ public class GameManager : MonoBehaviour
         float x = PlayerPrefs.GetFloat("ObjectPosX");
         float y = PlayerPrefs.GetFloat("ObjectPosY");
         float z = PlayerPrefs.GetFloat("ObjectPosZ");
-        objectToMove.transform.position = new Vector3(x, y, z);
+        objectToMove.transform.position = new Vector3(x, y, z);        
     }
 }
