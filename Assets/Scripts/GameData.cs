@@ -10,7 +10,7 @@ public class GameData
 
     public GameData(GameSaveManager gameManager)
     {
-        isLightA_On = gameManager.toggleA.isOn;      
+        isLightA_On = gameManager.toggleA.enabled;      
 
         playerPosition = new float[3];
         playerPosition[0] = gameManager.player.transform.position.x;

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class GameSaveManager : MonoBehaviour
 {   
-    public Toggle toggleA;    
+    public Light toggleA;    
     public GameObject player;
     public void SaveGameWithPlayerPrefs()
     {
-        PlayerPrefs.SetInt("lightA", toggleA.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("lightA", toggleA.enabled ? 1 : 0);
         
 
         PlayerPrefs.SetFloat("xPos", player.transform.position.x);
@@ -25,12 +25,12 @@ public class GameSaveManager : MonoBehaviour
             Debug.Log("Has Key");
             if(PlayerPrefs.GetInt("lightA") == 1)
             {
-                toggleA.isOn = true;
+                toggleA.enabled = true;
                 Debug.Log("On");
             }
             else
             {
-                toggleA.isOn = false;
+                toggleA.enabled = false;
             }
         }
              
@@ -55,7 +55,7 @@ public class GameSaveManager : MonoBehaviour
     {
         GameData data = GameSaveBinary.LoadData();
 
-        toggleA.isOn = data.isLightA_On;
+        toggleA.enabled = data.isLightA_On;
 
 
         float xPos = data.playerPosition[0];
